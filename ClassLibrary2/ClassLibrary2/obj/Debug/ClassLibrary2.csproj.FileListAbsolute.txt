@@ -1,0 +1,15 @@
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.csproj.CoreCompileInputs.cache
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\nunit.framework.dll
+D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\nunit.framework.xml
+D:\source\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+D:\source\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+D:\source\ClassLibrary2\ClassLibrary2\bin\Debug\nunit.framework.dll
+D:\source\ClassLibrary2\ClassLibrary2\bin\Debug\nunit.framework.xml
+D:\source\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.csprojResolveAssemblyReference.cache
+D:\source\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.csproj.CoreCompileInputs.cache
+D:\source\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+D:\source\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
