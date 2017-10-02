@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="20" engine-version="3.7.0.0" clr-version="4.0.30319.42000" start-time="2017-10-01 16:33:20Z" end-time="2017-10-01 16:33:21Z" duration="1.252134">
+  <command-line><![CDATA[nunit3-console  D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll]]></command-line>
+  <test-suite type="Assembly" id="0-1005" name="ClassLibrary2.dll" fullname="D:\University\4kurs\test\2\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.137146" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="20">
+    <environment framework-version="3.8.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.15063.0" platform="Win32NT" cwd="D:\University\4kurs\test\2\test" machine-name="DESKTOP-6U55132" user="elisa" user-domain="DESKTOP-6U55132" culture="ru-RU" uiculture="ru-RU" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="D:\University\4kurs\test\2\test" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.6.1" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="NumberOfTestWorkers" value="4" />
+    </settings>
+    <properties>
+      <property name="_PID" value="11616" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="0-1006" name="ClassLibrary2" fullname="ClassLibrary2" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.085905" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="20">
+      <test-suite type="TestFixture" id="0-1000" name="Class1" fullname="ClassLibrary2.Class1" classname="ClassLibrary2.Class1" runstate="Runnable" testcasecount="4" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.071889" total="4" passed="4" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="20">
+        <test-case id="0-1004" name="Divis" fullname="ClassLibrary2.Class1.Divis" methodname="Divis" classname="ClassLibrary2.Class1" runstate="Runnable" seed="1166667339" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.045741" asserts="5" />
+        <test-case id="0-1003" name="Mult" fullname="ClassLibrary2.Class1.Mult" methodname="Mult" classname="ClassLibrary2.Class1" runstate="Runnable" seed="116165449" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.000722" asserts="5" />
+        <test-case id="0-1002" name="TestMinus" fullname="ClassLibrary2.Class1.TestMinus" methodname="TestMinus" classname="ClassLibrary2.Class1" runstate="Runnable" seed="816502407" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.000593" asserts="5" />
+        <test-case id="0-1001" name="TestPlus" fullname="ClassLibrary2.Class1.TestPlus" methodname="TestPlus" classname="ClassLibrary2.Class1" runstate="Runnable" seed="800286571" result="Passed" start-time="2017-10-01 16:33:21Z" end-time="2017-10-01 16:33:21Z" duration="0.000573" asserts="5" />
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
