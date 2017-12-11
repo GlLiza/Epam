@@ -1,0 +1,9 @@
+E:\University\4 курс\Тестирование программного обеспечения\1\univer\univer\bin\Debug\univer.exe.config
+E:\University\4 курс\Тестирование программного обеспечения\1\univer\univer\obj\Debug\univer.csprojResolveAssemblyReference.cache
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\obj\Debug\univer.csprojResolveAssemblyReference.cache
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\obj\Debug\univer.csproj.CoreCompileInputs.cache
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\bin\Debug\univer.exe.config
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\bin\Debug\univer.exe
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\bin\Debug\univer.pdb
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\obj\Debug\univer.exe
+D:\University\4kurs\Тестирование программного обеспечения\1\univer\univer\obj\Debug\univer.pdb
