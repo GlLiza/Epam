@@ -35,7 +35,7 @@ namespace NunitTestFramework.Pages
         [FindsBy(How = How.Id, Using = "flightmanagerFlightsFormDestination")]
         private IWebElement inputToAirport;
 
-        [FindsBy(How = How.Id, Using = "lhfaToggleRoundtrip")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='flm - flight - trip - block']/div[1]/div/fieldset/div")]
         private IWebElement selectTypeWay;
 
 
@@ -73,7 +73,7 @@ namespace NunitTestFramework.Pages
         [FindsBy(How = How.Id, Using = "flightmanagerFlightsFormDestinationAirportAtlasCity")]
         private IWebElement selectCityTo;
 
-        [FindsBy(How = How.Id, Using = "flightmanagerFlightsFormDestinationAirportAtlasCity")]
+        [FindsBy(How = How.Id, Using = "flightmanagerFlightsFormDestinationAirportAtlasAirport")]
         private IWebElement selectAirportTo;
         
         #endregion
@@ -313,7 +313,8 @@ namespace NunitTestFramework.Pages
 
         public void SetTypeWay()
         {
-            selectTypeWay.Submit();
+            driver.FindElement(By.CssSelector("#lhfaToggleRoundtrip")).Click();
+          
         }
         public void SearchFlight()
         {
@@ -333,11 +334,11 @@ namespace NunitTestFramework.Pages
         public void OpenFormForChooseFrom()
         {
             buttonChooseFrom.Click();
+
         }
         public void SelectFromCountry(string fromCountry)
         {
-            select = new SelectElement(selectCountryFrom);
-            select.SelectByText(fromCountry);
+            selectCountryFrom.SendKeys(fromCountry);
         }
         public void SelectFromCity(string fromCity)
         {
@@ -349,7 +350,7 @@ namespace NunitTestFramework.Pages
         }
         public void ChooseFromAirport()
         {
-            driver.FindElement(By.CssSelector("body > div.airport-atlas.modal.in > div > div > form > div.modal-footer.lid > input")).Click();
+            driver.FindElement(By.CssSelector("body > div.airport-atlas.modal.in > div > div > form > div.modal-footer.lid > input")).Submit();
           
         }
 
@@ -374,7 +375,7 @@ namespace NunitTestFramework.Pages
         }
         public void ChooseToAirport()
         {
-            driver.FindElement(By.CssSelector("body > div.airport-atlas.modal.in > div > div > form > div.modal-footer.lid > input")).Click();
+            driver.FindElement(By.CssSelector("body > div.airport-atlas.modal.in > div > div > form > div.modal-footer.lid > input")).Submit();
 
         }
         #endregion

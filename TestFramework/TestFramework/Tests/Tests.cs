@@ -47,11 +47,11 @@ namespace NunitTestFramework.Tests
 
         [Test]
         public void TestWithOneAdultSixInflants()
-        {
+         {
             steps.OpenPage();
             steps.ChooseThePointOfDeparture("Belarus", "Minsk", "Minsk(MSQ)");
-            steps.ChooseThePointOfArrival("United Kingdom", "Лондон", "London Gatwick(LGW)");
-            steps.Next();
+            steps.ChooseThePointOfArrival("United Kingdom", "Лондон", "London Gatwick (LGW)");
+            //steps.Next();
             steps.SetOneWay();
             steps.SetDateDept(Department_date);
             steps.OpenFormForChooseDetails();
@@ -157,7 +157,7 @@ namespace NunitTestFramework.Tests
             steps.SetDateDept(Department_date);
             steps.SetDateReturn(Return_date, ReturnNextMonth);
             steps.SearchFlights();
-            Assert.True(steps.GetErrorSameAirport(ErrorPointOfArrivalAndDepartIsSame));
+            Assert.IsTrue(steps.GetErrorSameAirport(ErrorPointOfArrivalAndDepartIsSame));
            
         }
 
@@ -178,6 +178,7 @@ namespace NunitTestFramework.Tests
         {
             steps.OpenPage();
             steps.EnterRoute("Minsk", "Grodno");
+            steps.SetOneWay();
             steps.SetDateDept(Department_date);
             steps.SearchFlights();
             Assert.IsTrue(steps.GetErrorDestination(ErrorPointOfArrivalIsNotCorrect));

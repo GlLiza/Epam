@@ -45,6 +45,7 @@ namespace NunitTestFramework.Steps
         {
             mainPage.SetFromAirport(fromAirport);
             mainPage.SetToAirport(toAirport);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void Next()
@@ -55,19 +56,23 @@ namespace NunitTestFramework.Steps
         public void ChooseThePointOfDeparture(string fromCountry, string fromCity, string fromAirport)
         {
             mainPage.OpenFormForChooseFrom();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             mainPage.SelectFromCountry(fromCountry);
             mainPage.SelectFromCity(fromCity);
             mainPage.SelectFromAirport(fromAirport);
             mainPage.ChooseFromAirport();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void ChooseThePointOfArrival(string toCountry, string toCity, string toAirport)
         {
             mainPage.OpenFormForChooseTo();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             mainPage.SelectToCountry(toCountry);
             mainPage.SelectToCity(toCity);
             mainPage.SelectToAirport(toAirport);
             mainPage.ChooseToAirport();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void SearchFlights()
@@ -127,6 +132,7 @@ namespace NunitTestFramework.Steps
         public void SetOneWay()
         {
             mainPage.SetTypeWay();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
 
