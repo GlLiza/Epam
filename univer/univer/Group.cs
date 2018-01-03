@@ -6,37 +6,46 @@ using System.Threading.Tasks;
 
 namespace univer
 {
-    public class Group
+    public class Group:Interface
     {
         public int Number { get; set; }
-        public List<Student> Students { get; set; }
+        public List<Student> StudentsList { get; set; }
 
         public Group() { }
 
         public Group(int Number, List<Student> Students)
         {
             this.Number = Number;
-            this.Students = Students;
+            this.StudentsList = Students;
         }
 
-        public double MiddleGroup(Group group)
+        public int GetAverageScore()
         {
-            double midSt = 0.0, midGroup = 0.0;
-
-
-            foreach (var student in group.Students)
+            int _groupNotesSum = 0;
+            foreach (Student std in StudentsList)
             {
-                foreach (var sub in student.Subjects)
-                {
-                    midSt += sub.MiddleMark(sub);
-                }
-
-                midSt = midSt / student.Subjects.Count;
-                midGroup += midSt;
+                _groupNotesSum += std.GetAverageScore();
             }
-            return midGroup / group.Students.Count;
+            return _groupNotesSum / StudentsList.Count;
         }
-
+        public void GetInfo()
+        {
+            Console.WriteLine("Group: {0} {1}", Number);
+            Console.WriteLine("Student notes: ");
+            foreach (Student std in StudentsList)
+            {
+                Console.Write("Student: {0} {1} ", std.Name);
+                foreach (Subject sbj in std.Subjects)
+                {
+                    for (int i = 0; i < sbj.Marks.Count; i++)
+                    {
+                         Console.Write("{0} ", sbj.Marks[i]); 
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Student average score: {0}",GetAverageScore());
+        }
 
     }
 }

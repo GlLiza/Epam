@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace univer
 {
-    public class Subject
+    public class Subject : Interface
     {
         public string Name { get; set; }
         public List<int> Marks { get; set; }
@@ -16,23 +17,21 @@ namespace univer
             this.Marks = Marks;
         }
 
-        //возвращает средний балл по одному предмету
-        public double MiddleMark(Subject sub)
+        public int GetAverageScore()
         {
-            return Marks.Average();
+            return Marks.Sum() / Marks.Count();
         }
 
-
-        //возвращаетт средний балл по нескольким предметам
-        public double MiddleSubject(List<Subject> subjects) {
-            double mid = 0.0;
-
-            foreach (var sub in subjects)
+        public void GetInfo()
+        {
+            Console.WriteLine("Subject: {0}",Name);
+            Console.Write("Subject {0} markers:",Name);
+            foreach (int mark in Marks)
             {
-                mid += sub.Marks.Average();
+                Console.Write("{0}",mark);
             }
-
-          return mid / subjects.Count;
+            Console.WriteLine();
+            Console.WriteLine("Subject {1} average score:{0}", GetAverageScore(), Name);
         }
     }
 }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Faculty.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="Interface.cs" />
     <Compile Include="Methods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

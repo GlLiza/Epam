@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace univer
 {
-    public class University
+    public class University:Interface
     {
         public string Name { get; set; }
         public List<Faculty> Faculties{get;set;}
@@ -16,6 +16,16 @@ namespace univer
         {
             this.Name = Nam;
             this.Faculties = Facul;
+        }
+
+        public int GetAverageScore()
+        {
+            int _facultyNotesSum = 0;
+            foreach (Faculty fcl in Faculties)
+            {
+                _facultyNotesSum += fcl.GetAverageScore();
+            }
+            return _facultyNotesSum / Faculties.Count;
         }
     }
 }

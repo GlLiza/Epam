@@ -6,31 +6,20 @@ using System.Threading.Tasks;
 
 namespace univer
 {
-    public class Faculty
+    public class Faculty:Interface
     {
         public string Name { get; set; }
 
         public List<Group> Groups { get; set; }
 
-        public double MiddleFaculty(Faculty faculty)
+        public int GetAverageScore()
         {
-            double mid = 0.0;
-
-            foreach (var group in faculty.Groups)
+            int _groupNotesSum = 0;
+            foreach (Group grp in Groups)
             {
-                foreach (var students in group.Students)
-                {
-                    foreach (var sub in students.Subjects)
-                    {
-
-                    }
-                }
-
+                _groupNotesSum += grp.GetAverageScore();
             }
-
-
-            return
+            return _groupNotesSum / Groups.Count;
         }
-
     }
 }

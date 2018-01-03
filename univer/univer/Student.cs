@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace univer
 {
-    public class Student
+    public class Student:Interface
     {
         public string Name { get; set; }
 
@@ -16,17 +17,31 @@ namespace univer
             this.Subjects = Sub;
         }
 
-        
-        public double MiddleStudent(Student student) {
-
-            double mid = 0.0;
-            foreach (var tmp in student.Subjects)
+        public int GetAverageScore()
+        {
+            int studMarkSum = 0;
+            foreach(Subject s in Subjects)
             {
-                mid+=tmp.MiddleMark(tmp);
+                studMarkSum += s.GetAverageScore();
             }
-
-            return mid / student.Subjects.Count;
+            return studMarkSum / Subjects.Count;
         }
-       
+
+        public void GetInfo()
+        {
+            Console.WriteLine("Student: {0} {1}", Name);
+            Console.WriteLine("Student notes: ");
+            foreach (Subject s in Subjects)
+            {
+                Console.Write("Subject name: {0} ", s.Name);
+                for (int i = 0; i < s.Marks.Count; i++)
+                {
+                    Console.Write("{0} ", s.Marks[i]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Student average score: {0}", GetAverageScore());
+        }
+
     }
 }
