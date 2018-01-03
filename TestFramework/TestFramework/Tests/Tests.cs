@@ -68,9 +68,9 @@ namespace NunitTestFramework.Tests
         public void TestTripWithChildren()
         {
             steps.OpenPage();
-            steps.ChooseThePointOfDeparture("Belarus", "Minsk", "Minsk(MSQ)");
-            steps.ChooseThePointOfArrival("Ukraine", "Киев", "Kiev - Boryspil Int'l (KBP)");
-            steps.Next();
+            steps.ChooseThePointOfDeparture("Belarus", "Minsk", "Minsk (MSQ)");
+            steps.ChooseThePointOfArrival("Ukraine", "Kiev", "Kiev - Boryspil Int'l (KBP)");
+            //steps.Next();
             steps.SetDateDept(Department_date);
             steps.SetDateReturn(Return_date, ReturnNextMonth);
             steps.OpenFormForChooseDetails();
@@ -122,7 +122,7 @@ namespace NunitTestFramework.Tests
 
 
         [Test]
-        public void TestPlaceRentCar()
+        public void TestDateRentCar()
         {
             steps.OpenPage();
             steps.RentCar();
@@ -143,7 +143,7 @@ namespace NunitTestFramework.Tests
             steps.SetReturnCarInform("London Gatwick", Return_car_date, "15:00");
             steps.SetTypeCar("Компакт");
             steps.SearchCars();            
-            Assert.IsTrue(steps.HasCarsList(true));
+            Assert.IsTrue(steps.HasCarsList());
         }
 
         [Test]
@@ -172,6 +172,9 @@ namespace NunitTestFramework.Tests
             steps.SearchHotels();
             Assert.True(steps.HasListOfHotels(true));
         }
+
+
+
 
         [Test]
         public void TestAirportExisting()

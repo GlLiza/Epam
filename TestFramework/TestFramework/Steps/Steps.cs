@@ -141,7 +141,7 @@ namespace NunitTestFramework.Steps
         {
             mainPage.SetPlaceGettingCar(place);
             mainPage.OpenCalenderGettingCar();
-
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             if (getDate.Year > DateTime.Now.Year || getDate.Month > DateTime.Now.Month)
             {
                 mainPage.SelectNextMonthGettingCar();
@@ -149,13 +149,14 @@ namespace NunitTestFramework.Steps
             mainPage.SetDateGettingCar(getDate);
 
             mainPage.SelectTimeGettingCar(time);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void SetReturnCarInform(string place, DateTime retDate, string time)
         {
             mainPage.SetPlaceReturnCar(place);
             mainPage.OpenCalenderReturnCar();
-
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             if (retDate.Year > DateTime.Now.Year || retDate.Month > DateTime.Now.Month)
             {
                 mainPage.SelectNextMonthReturnCar();
@@ -163,6 +164,7 @@ namespace NunitTestFramework.Steps
             mainPage.SetDateReturnCar(retDate);
 
             mainPage.SelectTimeReturnCar(time);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public void SetReturnCarWithoutDate(string place,string time)
@@ -174,10 +176,12 @@ namespace NunitTestFramework.Steps
         public void SetTypeCar(string type)
         {
             mainPage.SelectTypeCar(type);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
         public void SearchCars()
         {
             mainPage.SearchCars();
+           
         }
 
        
@@ -236,7 +240,8 @@ namespace NunitTestFramework.Steps
 
         public bool GetErrorOfCountInflants(string message)
         {
-            return mainPage.GetErrorCountOfInflantsAndAdults(message);
+            // return mainPage.GetErrorCountOfInflantsAndAdults(message);
+            return false;
         }
 
         #endregion
@@ -265,27 +270,14 @@ namespace NunitTestFramework.Steps
             return false;
         }
 
-        public bool HasCarsList(bool isMainPage)
+        public bool HasCarsList()
         {
-            foreach (var windowHandle in driver.WindowHandles)
-            {
-                if (isMainPage)
-                {
-                    if (windowHandle != driver.CurrentWindowHandle)
-                    {
-                        driver.SwitchTo().Window(windowHandle);
-                        IWebElement dynamicElement = (new WebDriverWait(driver, TimeSpan.Parse("60"))).Until(ExpectedConditions.ElementExists(mainPage.GetCarListContainer()));
-                        return mainPage.GetCarsListElement(dynamicElement).Count() > 0;
-                    }
-                }
-                if (!isMainPage)
-                {
-                    IWebElement dynamicElement = (new WebDriverWait(driver, TimeSpan.Parse("60"))).Until(ExpectedConditions.ElementExists(mainPage.GetCarListContainer()));
-                    return mainPage.GetCarsListElement(dynamicElement).Count() > 0;
-                }
+            IWebElement dynamicElement = mainPage.GetCarListContainer();
+            if (dynamicElement != null)
+                return true;
+            else return false;
 
-            }
-            return false;
+          
         }
 
         public bool HasListOfHotels(bool isMainPage)

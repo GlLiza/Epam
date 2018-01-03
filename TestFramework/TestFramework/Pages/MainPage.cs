@@ -152,8 +152,9 @@ namespace NunitTestFramework.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id='flightmanagerCarFormdropoffDateDisplay - msg']")]
         private IWebElement errorDateOfReturnCar;  
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='flightmanagerCarForm']/div[1]/div/ul/li[1]/a")]
-        private IWebElement errorTimeOfReturnOfCar;
+        //[FindsBy(How = How.XPath, Using = "//*[@id='flightmanagerCarFormdropoffDateDisplay - msg']")]
+       
+        //private IWebElement errorTimeOfReturnOfCar;
 
         [FindsBy(How = How.XPath, Using = " //*[@id='flightmanagerFlightsForm']/div[1]/div/ul/li/a")]
         private IWebElement errorPlaceOfDepartArrive;
@@ -526,20 +527,21 @@ namespace NunitTestFramework.Pages
             return errorPlaceOfDepartArrive.Text == errorMessage;
         }
 
-        public bool GetErrorTimeOfReturnCar(string errorMessage)
-        {
-            return errorTimeOfReturnOfCar.Text == errorMessage;
-        }
+        //public bool GetErrorTimeOfReturnCar(string errorMessage)
+        //{
+        //    return errorTimeOfReturnOfCar.Text == errorMessage;
+        //}
 
         public bool GetErrorDateOfReturnCar(string errorMessage)
         {
+            IWebElement errorTimeOfReturnOfCar = driver.FindElement(By.CssSelector("#flightmanagerCarFormdropoffDateDisplay-msg"));
             return errorTimeOfReturnOfCar.Text == errorMessage;
         }
 
-        public bool GetErrorCountOfInflantsAndAdults(string errorMessage)
-        {
-            return errorTimeOfReturnOfCar.Text == errorMessage;
-        }
+        //public bool GetErrorCountOfInflantsAndAdults(string errorMessage)
+        //{
+        //    return errorTimeOfReturnOfCar.Text == errorMessage;
+        //}
         #endregion
 
 
@@ -564,7 +566,8 @@ namespace NunitTestFramework.Pages
         public void SetDateGettingCar(DateTime dateGetting)
         {
             string date = dateGetting.Day.ToString();
-            foreach (var c in calenderRent.FindElements(By.TagName("tr")))
+            IWebElement calender = driver.FindElement(By.CssSelector("#kosa-cal-modal-3 > div > div > div.date > div.months-wrapper > div:nth-child(1) > div.month-table > table"));
+            foreach (var c in calender.FindElements(By.TagName("tr")))
             {
                 foreach (var d in c.FindElements(By.TagName("td")))
                 {
@@ -583,6 +586,7 @@ namespace NunitTestFramework.Pages
 
         public void SetPlaceReturnCar(string returnPlaceCar)
         {
+            inputPlaceOfReturn.Clear();
             inputPlaceOfReturn.SendKeys(returnPlaceCar);
         }
 
@@ -601,7 +605,8 @@ namespace NunitTestFramework.Pages
         public void SetDateReturnCar(DateTime dateReturn)
         {
             string date = dateReturn.Day.ToString();
-            foreach (var c in calenderReturn.FindElements(By.TagName("tr")))
+            IWebElement calender = driver.FindElement(By.CssSelector("#kosa-cal-modal-4 > div > div > div.date > div.months-wrapper > div:nth-child(1) > div.month-table > table"));
+            foreach (var c in calender.FindElements(By.TagName("tr")))
             {
                 foreach (var d in c.FindElements(By.TagName("td")))
                 {
@@ -613,9 +618,9 @@ namespace NunitTestFramework.Pages
                 }
             }
         }
-        public void SelectTimeReturnCar(string timeReturn)
+        public void SelectTimeReturnCar(string timReturn)
         {
-            timeGetting.SendKeys(timeReturn);
+            timeReturn.SendKeys(timReturn);
         }
 
         public void SelectTypeCar(string typeCar)
@@ -628,9 +633,10 @@ namespace NunitTestFramework.Pages
         }
 
 
-        public By GetCarListContainer()
+        public IWebElement GetCarListContainer()
         {
-            return By.XPath("//*[@id='car - list']");
+            IWebElement cont = driver.FindElement(By.CssSelector("#carList > section > div"));
+            return cont;
         }       
 
         public IEnumerable<IWebElement> GetCarsListElement(IWebElement dynamicElement)
